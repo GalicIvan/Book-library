@@ -12,7 +12,17 @@
         <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close" id="closeBtn">&times;</span>
-            <p>This is a popup window!</p>
+            <form action="#" id="myForm">
+                <div class="form-container">
+                    <label for="book_name">Book name</label>
+                    <input type="text" name="book_name" id="book_name">
+                    <label for="book_age">Book age</label>
+                    <input type="text" name="book_age" id="book_age">
+                    <label for="book_author">Book author</label>
+                    <input type="text" name="book_author" id="book_author">
+                </div>
+                <button type="submit" class="btn popupBtn" onclick="addBookToLibrary()">Submit</button>
+            </form>
         </div>
         </div>
     </div>
