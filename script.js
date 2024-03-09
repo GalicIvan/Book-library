@@ -5,11 +5,9 @@ function Book(bookName, bookAge, bookAuthor) {
   this.bookAge = bookAge
   this.bookAuthor = bookAuthor
 }
-// TODO: popravit dodavanje knjiga u myLibrary, napravit da ih ispise, mozda da se moze izbrisat
+// TODO: napravit da ih ispise, mozda da se moze izbrisat
 
 function addBookToLibrary() {
-  document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault()
 
     let name = document.getElementById('book_name').value
     let age = document.getElementById('book_age').value
@@ -18,7 +16,29 @@ function addBookToLibrary() {
     const newBook = new Book(name, age, author)
     myLibrary.push(newBook)
     console.log(myLibrary)
-})
+
+    document.getElementById('popup').style.display = 'none'
+
+    document.getElementById('myForm').reset()
+    return false
+}
+
+function showBooks() {
+  const bookList = document.querySelector('#book-list')
+  bookList.innerHTML = ''
+
+  myLibrary.forEach((book, index) => {
+    const bookItem = document.createElement('div')
+    bookItem.classList.add('book-item')
+    bookItem.innerHTML = `
+    <ul>
+      <li>${book.bookName}<\li>
+      <li>${book.bookAge}<\li>
+      <li>${book.bookAuthor}<\li>
+    
+    `
+    bookList.appendChild(bookItem)
+  })
 }
 
 document.getElementById('popupBtn').addEventListener('click', function() {
@@ -28,4 +48,3 @@ document.getElementById('popupBtn').addEventListener('click', function() {
   document.getElementById('closeBtn').addEventListener('click', function() {
     document.getElementById('popup').style.display = 'none';
   });
-

@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="book-list"></div>
     <div class="container">
         <button id="popupBtn">Add a new book</button>
+        <button class="btn" onclick="showBooks()">Show books</button>
         <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close" id="closeBtn">&times;</span>
@@ -21,7 +23,7 @@
                     <label for="book_author">Book author</label>
                     <input type="text" name="book_author" id="book_author">
                 </div>
-                <button type="submit" class="btn popupBtn" onclick="addBookToLibrary()">Submit</button>
+                <button type="submit" class="btn" onclick="return addBookToLibrary()">Submit</button>
             </form>
         </div>
         </div>
