@@ -5,7 +5,6 @@ function Book(bookName, bookAge, bookAuthor) {
   this.bookAge = bookAge
   this.bookAuthor = bookAuthor
 }
-// TODO: napravit da ih ispise, mozda da se moze izbrisat
 
 function addBookToLibrary() {
 
@@ -31,11 +30,12 @@ function showBooks() {
     const bookItem = document.createElement('div')
     bookItem.classList.add('book-item')
     bookItem.innerHTML = `
+    <p>Details about the book:</p>
     <ul>
-      <li>${book.bookName}<\li>
-      <li>${book.bookAge}<\li>
-      <li>${book.bookAuthor}<\li>
-    
+      <li>${book.bookName}</li>
+      <li>${book.bookAge}</li>
+      <li>${book.bookAuthor}</li>
+    </ul>
     `
     bookList.appendChild(bookItem)
   })
